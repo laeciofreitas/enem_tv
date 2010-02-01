@@ -1,0 +1,17 @@
+<% title "Tags" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for tag in Tag.find(:all, :order => 'name') %>
+    <tr>
+      <td><%= link_to h(tag.name), tag_path(tag) %></td>
+      <td><%= link_to "Ver", tag %></td>
+      <td><%= link_to "Excluir", tag, :confirm => 'Tem certeza?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "Tags", tags_path %></p>
+

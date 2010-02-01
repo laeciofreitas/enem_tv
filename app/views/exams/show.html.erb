@@ -1,0 +1,26 @@
+<% title "Simulado" %>
+
+<p>
+  <strong>Titulo:</strong>
+  <%=h @exam.title %>
+</p>
+<ol>
+  <% for quest in @exam.questions %>
+    <li>
+      <%= h quest.question %>
+      <ul>
+        <% for alt in quest.alternatives %>
+          <li>
+            <%= alt.alternative %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ol>
+<p>
+  <%= link_to "Editar", edit_exam_path(@exam) %> |
+  <%= link_to "Excluir", @exam, :confirm => 'Tem certaza?', :method => :delete %> |
+  <%= link_to "Ver todos simulados", exams_path %>
+</p>
+

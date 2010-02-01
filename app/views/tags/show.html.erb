@@ -1,0 +1,14 @@
+<% title "#{@tag.name}" %>
+
+<p>
+  <strong>Simulados</strong>
+  <% for exam in @exams %>
+    <%= link_to exam.title, exam_path(exam) %>
+  <% end %>
+</p>
+
+<p>
+  <%= link_to "Excluir", @tag, :confirm => 'Tem certeza?', :method => :delete %> |
+  <%= link_to "Ver todas tags", tags_path %>
+</p>
+

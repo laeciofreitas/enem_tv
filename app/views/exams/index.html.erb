@@ -1,0 +1,18 @@
+<% title "Simulados" %>
+
+<table>
+  <tr>
+    <th><h2>Simulados</h2></th>
+  </tr>
+  <% for exam in @exams %>
+    <tr>
+      <td><%=h exam.title %></td>
+      <td><%= link_to "Ver", exam %></td>
+      <td><%= link_to "Editar", edit_exam_path(exam) %></td>
+      <td><%= link_to "Excluir", exam, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "Novo simulado", new_exam_path %></p>
+
